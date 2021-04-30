@@ -21,7 +21,6 @@ const convertDollarsToCents = (dollars) => {
     let i = 0
 
     while (dollars > 0) {
-        console.log(dollars);
         i++;
         for (let key of coinsArr) {
             let coin = Number(key);
@@ -34,7 +33,12 @@ const convertDollarsToCents = (dollars) => {
         }
     }
 
+    let coinsUsed = Object.values(coins);
 
-    console.log(Object.values(coins));
+    document.getElementById('quarters').innerHTML = 'Quarters: ' + coinsUsed[3];
+    document.getElementById('dimes').innerHTML = 'Dimes: ' + coinsUsed[2];
+    document.getElementById('nickels').innerHTML = 'Nickels: ' + coinsUsed[1];
+    document.getElementById('pennies').innerHTML = 'Pennies: ' + coinsUsed[0];
+
     console.log(Object.entries(coins));
 }
